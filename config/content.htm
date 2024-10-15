@@ -38,7 +38,15 @@ for i in range(n):  # 對於每一行
     print(' ' * (n - i - 1), end='')  # 在每行前面印出空格
     # 印出星號
     print('*' * (2 * i + 1))  # 每行印出 2*i + 1 個星號</pre>
-<p><br/>    *<br/>   ***<br/>  *****<br/> *******<br/>*********</p><h1>HW 1</h1>
+<p>輸出結果<br/>    *<br/>   ***<br/>  *****<br/> *******<br/>*********</p>
+<h3>解釋：</h3>
+<ol>
+<li><code>for i in range(n):</code> 循環會運行 <code>n</code> 次，<code>i</code> 表示當前行的索引。</li>
+<li><code>print(' ' * (n - i - 1), end='')</code> 控制每一行的前導空格數量。對於第 <code>i</code> 行，會打印 <code>n - i - 1</code> 個空格，讓星號居中。</li>
+<li><code>print('*' * (2 * i + 1))</code> 每一行打印 <code>2 * i + 1</code> 個星號，這使得星號的數量隨行數增長。</li>
+</ol>
+<p>這樣就能形成一個等腰三角形。如果你改變 <code>n</code> 的值，三角形的高度也會隨之改變。</p>
+<h1>HW 1</h1>
 <h4>主題: 基於瀏覽器的分散式版次管理與整合程式開發環境 (10%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">USB 隨身碟:</p>
 <p style="padding-left: 60px;">下載 <a href="http://229.cycu.org/python_2025_lite.7z">python_2025_lite.7z</a> (428 MB, 解開壓縮後約 1.5 GB)</p>
