@@ -30,7 +30,7 @@
 <p><span><span data-teams="true"><span class="ui-provider jo md me mf mg mh mi mj mk ml mm mn mo mp mq mr ms mt mu mv mw mx my mz na nb nc nd ne nf ng nh ni nj nk" dir="ltr">1 開啟start_ipv6.bat</span></span></span></p>
 <p>2 <span data-teams="true"><span class="ui-provider jo md me mf mg mh mi mj mk ml mm mn mo mp mq mr ms mt mu mv mw mx my mz na nb nc nd ne nf ng nh ni nj nk" dir="ltr">cd notebook</span></span></p>
 <p>3 <span data-teams="true"><span class="ui-provider jo md me mf mg mh mi mj mk ml mm mn mo mp mq mr ms mt mu mv mw mx my mz na nb nc nd ne nf ng nh ni nj nk" dir="ltr">jupyter lab --collaborative</span></span></p>
-<h2><span data-teams="true"><span class="ui-provider jo md me mf mg mh mi mj mk ml mm mn mo mp mq mr ms mt mu mv mw mx my mz na nb nc nd ne nf ng nh ni nj nk" dir="ltr"><span>coppeliaSim</span></span></span></h2>
+<h2>coppeliaSim</h2>
 <h1>Environment</h1>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 5  # 總共的行數
  
@@ -110,3 +110,19 @@ for i in range(n):  # 對於每一行
 <p style="padding-left: 30px;">......</p>
 <p>期末報告自評成績:</p>
 <p style="padding-left: 30px;">完成上述流程後, 請將 Final Report 自評分數輸入 cp2024 自評表單中.</p>
+<h1>Brython</h1>
+<p>從 1 累加到 100:</p>
+<p><button id="add1to100">1 add to 100</button></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">a = "簡單 python 程式"
+
+for i in range(10):
+    print(i, a)
+    </pre>
+<form><label>Filename:<span> </span><input id="kw_filename" placeholder="input file name" type="text"/>.py</label><span> </span><input onclick="doSave('kw_py_src1', 'kw_filename1');" type="submit" value="Save"/></form>
+<p></p>
+<p></p>
+<p></p>
+<p><button id="kw_run1">Run</button><span> </span><button id="kw_show_console1">Output</button><span> </span><button id="kw_clear_console1">清除輸出區</button><button id="clear_bd1">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
+<p></p>
+<p><br/><br/></p>
+<div></div>
