@@ -221,7 +221,7 @@ def draw_circle(grid_width, grid_height, radius):
 # 畫出網格和圓形
 grid(10, 10, gs)
 draw_circle(10, 10, radius=4)</pre>
-<p>w12</p>
+<p>w12-1</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 11 # 總共的行數
 space = '_'
 center = n//2
@@ -230,7 +230,46 @@ center = n//2
 for y in range(n):
     for x in range(n):
         print("(", x, ", ", y, ")", sep="")</pre>
-<p></p><br />w10 << <a href='w10.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+<p>w12-2</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]  # 確保這個 ID 是正確的
+brython_div &lt;= canvas
+
+# 每一格的 pixel 數
+gs = 20
+
+# canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+if ctx is None:
+    print("無法獲取 canvas 的繪圖上下文，請檢查瀏覽器支援及程式碼")
+else:
+    width = 11
+    height = 11
+
+    # 保留第 35 行的程式邏輯
+    '''
+    ctx.lineWidth = 1
+    ctx.strokeStyle = 'lightgrey'
+    ctx.beginPath()
+    # ctx.rect(i*gs, j*gs, gs, gs)  # 註解掉的部分
+    ctx.rect(0, 0, 150, 100)
+    ctx.stroke()
+    '''
+
+    for i in range(width):
+        for j in range(height):
+            # 保留 35 行的結構，但加上有效的註解符號
+            # dRect(i*gs, j*gs, gs, gs, 1, "lightgrey")  # 這裡如果未實現，應保留註解形式
+            ctx.lineWidth = 1
+            ctx.strokeStyle = 'lightgrey'
+            ctx.beginPath()
+            ctx.rect(i * gs, j * gs, gs, gs)
+            ctx.stroke()</pre>
+<br />w10 << <a href='w10.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
