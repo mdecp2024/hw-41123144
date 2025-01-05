@@ -142,7 +142,57 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4<br /><h1>w16_exam2</h1>
-<br />HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
+<p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/bafc6303819597f77a9ca29c5dc7c986/raw/2dae279cf561f13871979aa76ed8201c25895a94/w16%2520ex2">exam2</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)  # 設定迷宮畫布大小
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 取得 canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 標示左上方點座標 (31, 44)
+ctx.font = "12px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(31, 44)", 33, 58)
+
+# 定義藍色線條的屬性
+ctx.strokeStyle = "blue"
+ctx.lineWidth = 2
+
+# 座標偏移 (31, 44) 為起點
+offset_x, offset_y = 31, 44
+
+# 定義迷宮的線條 (每條線由起點和終點定義)
+lines = [
+    ((0, 0), (80, 0)),   # 上方水平線
+    ((120, 0), (200, 0)),  # 上方右段水平線
+    ((200, 0), (200, 200)),  # 右側垂直線
+    ((0, 0), (0, 200)),  # 左側垂直線
+    ((0, 200), (80, 200)),  # 下方左段水平線
+    ((120, 200), (200, 200)),  # 下方右段水平線
+    ((80, 160), (80, 200)),  # 左側中段垂直線
+    ((80, 160), (120, 160)),  # 中間橫線
+    ((160, 120), (160, 200)),  # 右側中段垂直線
+    ((40, 120), (160, 120)),  # 中段水平線
+    ((40, 120), (40, 160)),  # 左中垂直線
+    ((120, 80), (120, 120)),  # 中間右段垂直線
+    ((0, 80), (80, 80)),  # 左上水平線
+    ((80, 40), (80, 80)),  # 左中垂直線
+    ((40, 40), (160, 40)),  # 上中水平線
+    ((160, 40), (160, 80))  # 右中垂直線
+]
+
+# 繪製迷宮線條
+ctx.beginPath()
+for (start, end) in lines:
+    ctx.moveTo(offset_x + start[0], offset_y + start[1])
+    ctx.lineTo(offset_x + end[0], offset_y + end[1])
+ctx.stroke()</pre>
+<p>心得</p><br />HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
         
     <!-- footer -->
       <div class="container">

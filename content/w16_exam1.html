@@ -142,6 +142,66 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3<br /><h1>w16_exam1</h1>
+<p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/f898fe51f9595948ec9c0feec62d0386/raw/1b2c135a255b33fca72eed2316c7304dafdf62a5/w16ex1">exam1</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 建立 Canvas 並加入網頁
+canvas = html.CANVAS(width=500, height=500)
+doc["brython_div1"] &lt;= canvas
+ctx = canvas.getContext("2d")
+
+# 原點座標
+origin_x, origin_y = 31, 44
+
+# 繪製坐標軸與原點標示
+ctx.beginPath()
+ctx.strokeStyle, ctx.lineWidth = 'black', 2
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(400, origin_y)  # X 軸
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(origin_x, 400)  # Y 軸
+ctx.stroke()
+
+ctx.font, ctx.fillStyle = "12px Arial", "black"
+ctx.fillText(f"({origin_x}, {origin_y})", origin_x + 4, origin_y + 13)
+
+# 定義圖形繪製的屬性
+shapes = [
+    {"type": "polygon", "color": "orange", "points": [
+        (50, 50), (70, 20), (100, 20), (120, 50), (100, 80), (70, 80)]},
+    {"type": "polygon", "color": "teal", "points": [
+        (130, 50), (150, 15), (170, 50), (150, 85)]},
+    {"type": "polygon", "color": "skyblue", "points": [
+        (155, 85), (175, 50), (195, 85)]},
+    {"type": "circle", "color": "red", "center": (215, 50), "radius": 27},
+    {"type": "rect", "color": "gold", "position": (250, 25), "size": (50, 50)},
+    {"type": "rect", "color": "navy", "position": (310, 40), "size": (60, 25)}
+]
+
+# 繪製圖形
+for shape in shapes:
+    ctx.beginPath()
+    ctx.fillStyle = shape["color"]
+
+    if shape["type"] == "polygon":
+        points = shape["points"]
+        ctx.moveTo(origin_x + points[0][0], origin_y + points[0][1])
+        for x, y in points[1:]:
+            ctx.lineTo(origin_x + x, origin_y + y)
+        ctx.closePath()
+        ctx.fill()
+
+    elif shape["type"] == "circle":
+        center, radius = shape["center"], shape["radius"]
+        ctx.arc(origin_x + center[0], origin_y + center[1], radius, 0, 2 * 3.14159)
+        ctx.fill()
+
+    elif shape["type"] == "rect":
+        pos, size = shape["position"], shape["size"]
+        ctx.rect(origin_x + pos[0], origin_y + pos[1], size[0], size[1])
+        ctx.fill()</pre>
+<p>心得</p>
 <br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
         
     <!-- footer -->

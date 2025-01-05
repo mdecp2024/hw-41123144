@@ -142,7 +142,62 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report<br /><h1>w16_exam3</h1>
-<br />HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report</div>
+<p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/c290cd117c828fd84ad3bc7bd8bab093/raw/d613a0c6bfd837e5050a7f67da98c6ff7107996e/w16%2520ex3">exam3</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)  # 設定迷宮畫布大小
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 取得 canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 標示左上方點座標 (31, 44)
+ctx.font = "12px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(31, 44)", 33, 58)
+
+# 定義繪圖的偏移量
+offset_x, offset_y = 31, 44
+
+# 定義迷宮線條 (黑色) 和路徑線條 (紅色)
+lines = {
+    "black": [
+        ((0, 0), (80, 0)), ((120, 0), (200, 0)), ((200, 0), (200, 200)),
+        ((0, 0), (0, 200)), ((0, 200), (80, 200)), ((120, 200), (200, 200)),
+        ((80, 160), (80, 200)), ((80, 160), (120, 160)), ((160, 120), (160, 200)),
+        ((40, 120), (160, 120)), ((40, 120), (40, 160)), ((120, 80), (120, 120)),
+        ((0, 80), (80, 80)), ((80, 40), (80, 80)), ((40, 40), (160, 40)),
+        ((160, 40), (160, 80))
+    ],
+    "red": [
+        ((100, 0), (100, 20)), ((100, 20), (180, 20)), ((180, 20), (180, 100)),
+        ((180, 100), (140, 100)), ((140, 100), (140, 60)), ((140, 60), (100, 60)),
+        ((100, 60), (100, 100)), ((100, 100), (20, 100)), ((20, 100), (20, 180)),
+        ((20, 180), (60, 180)), ((60, 180), (60, 140)), ((60, 140), (140, 140)),
+        ((140, 140), (140, 180)), ((140, 180), (100, 180)), ((100, 180), (100, 200))
+    ]
+}
+
+# 繪製線條的函數
+def draw_lines(color, line_data):
+    ctx.strokeStyle = color
+    ctx.lineWidth = 2
+    ctx.beginPath()
+    for start, end in line_data:
+        ctx.moveTo(offset_x + start[0], offset_y + start[1])
+        ctx.lineTo(offset_x + end[0], offset_y + end[1])
+    ctx.stroke()
+
+# 繪製迷宮線條 (黑色)
+draw_lines("black", lines["black"])
+
+# 繪製路徑線條 (紅色)
+draw_lines("red", lines["red"])</pre>
+<pre><br/><br/></pre>
+<p>心得</p><br />HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report</div>
         
     <!-- footer -->
       <div class="container">

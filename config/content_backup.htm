@@ -231,7 +231,8 @@ else:
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/d03e546c64dfa3d0689b654be21b12dc/raw/5a313b8676c15e41f4bfac93f562bad929236838/w15-1">從 1 累加到 100</a></p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/b5308b9278ad9b3af6faa1cc4f545633/raw/fc4ca3abc984300a5a08bc48bce62c9bc934b60c/w15">addto</a></p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/3a24a5ecc56ca3a7a4ac6b0680f4ce3d/raw/b994b115ca550afe9a019bfb36a41eae9c967bde/w15">add_only_even</a></p>
-<p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/afca2ee7db867c4ccf04f3e541094c9b/raw/405137a32ddd17ee1090a34b0897ea6cc794fcda/w15">add_avoid_8</a></p><h1>HW 2</h1>
+<p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/afca2ee7db867c4ccf04f3e541094c9b/raw/405137a32ddd17ee1090a34b0897ea6cc794fcda/w15">add_avoid_8</a></p>
+<h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
@@ -242,6 +243,67 @@ else:
 <h2>HW 2 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3>w16_exam1</h3>
+<p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/f898fe51f9595948ec9c0feec62d0386/raw/1b2c135a255b33fca72eed2316c7304dafdf62a5/w16ex1">exam1</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 建立 Canvas 並加入網頁
+canvas = html.CANVAS(width=500, height=500)
+doc["brython_div1"] &lt;= canvas
+ctx = canvas.getContext("2d")
+
+# 原點座標
+origin_x, origin_y = 31, 44
+
+# 繪製坐標軸與原點標示
+ctx.beginPath()
+ctx.strokeStyle, ctx.lineWidth = 'black', 2
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(400, origin_y)  # X 軸
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(origin_x, 400)  # Y 軸
+ctx.stroke()
+
+ctx.font, ctx.fillStyle = "12px Arial", "black"
+ctx.fillText(f"({origin_x}, {origin_y})", origin_x + 4, origin_y + 13)
+
+# 定義圖形繪製的屬性
+shapes = [
+    {"type": "polygon", "color": "orange", "points": [
+        (50, 50), (70, 20), (100, 20), (120, 50), (100, 80), (70, 80)]},
+    {"type": "polygon", "color": "teal", "points": [
+        (130, 50), (150, 15), (170, 50), (150, 85)]},
+    {"type": "polygon", "color": "skyblue", "points": [
+        (155, 85), (175, 50), (195, 85)]},
+    {"type": "circle", "color": "red", "center": (215, 50), "radius": 27},
+    {"type": "rect", "color": "gold", "position": (250, 25), "size": (50, 50)},
+    {"type": "rect", "color": "navy", "position": (310, 40), "size": (60, 25)}
+]
+
+# 繪製圖形
+for shape in shapes:
+    ctx.beginPath()
+    ctx.fillStyle = shape["color"]
+
+    if shape["type"] == "polygon":
+        points = shape["points"]
+        ctx.moveTo(origin_x + points[0][0], origin_y + points[0][1])
+        for x, y in points[1:]:
+            ctx.lineTo(origin_x + x, origin_y + y)
+        ctx.closePath()
+        ctx.fill()
+
+    elif shape["type"] == "circle":
+        center, radius = shape["center"], shape["radius"]
+        ctx.arc(origin_x + center[0], origin_y + center[1], radius, 0, 2 * 3.14159)
+        ctx.fill()
+
+    elif shape["type"] == "rect":
+        pos, size = shape["position"], shape["size"]
+        ctx.rect(origin_x + pos[0], origin_y + pos[1], size[0], size[1])
+        ctx.fill()</pre>
+<p>心得</p>
 <h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
@@ -249,7 +311,58 @@ else:
 <h2>HW 3 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>HW 4</h1>
+<h3>w16_exam2</h3>
+<p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/bafc6303819597f77a9ca29c5dc7c986/raw/2dae279cf561f13871979aa76ed8201c25895a94/w16%2520ex2">exam2</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)  # 設定迷宮畫布大小
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 取得 canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 標示左上方點座標 (31, 44)
+ctx.font = "12px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(31, 44)", 33, 58)
+
+# 定義藍色線條的屬性
+ctx.strokeStyle = "blue"
+ctx.lineWidth = 2
+
+# 座標偏移 (31, 44) 為起點
+offset_x, offset_y = 31, 44
+
+# 定義迷宮的線條 (每條線由起點和終點定義)
+lines = [
+    ((0, 0), (80, 0)),   # 上方水平線
+    ((120, 0), (200, 0)),  # 上方右段水平線
+    ((200, 0), (200, 200)),  # 右側垂直線
+    ((0, 0), (0, 200)),  # 左側垂直線
+    ((0, 200), (80, 200)),  # 下方左段水平線
+    ((120, 200), (200, 200)),  # 下方右段水平線
+    ((80, 160), (80, 200)),  # 左側中段垂直線
+    ((80, 160), (120, 160)),  # 中間橫線
+    ((160, 120), (160, 200)),  # 右側中段垂直線
+    ((40, 120), (160, 120)),  # 中段水平線
+    ((40, 120), (40, 160)),  # 左中垂直線
+    ((120, 80), (120, 120)),  # 中間右段垂直線
+    ((0, 80), (80, 80)),  # 左上水平線
+    ((80, 40), (80, 80)),  # 左中垂直線
+    ((40, 40), (160, 40)),  # 上中水平線
+    ((160, 40), (160, 80))  # 右中垂直線
+]
+
+# 繪製迷宮線條
+ctx.beginPath()
+for (start, end) in lines:
+    ctx.moveTo(offset_x + start[0], offset_y + start[1])
+    ctx.lineTo(offset_x + end[0], offset_y + end[1])
+ctx.stroke()</pre>
+<p>心得</p><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
@@ -261,6 +374,7 @@ else:
 <h2>HW 4 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3>w16_exam3</h3>
 <h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
