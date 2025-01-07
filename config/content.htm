@@ -77,7 +77,7 @@ for i in range(n):  # 對於每一行
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/sjFcNZZYnqw?si=4I7jedDrmm1AMKqz" title="YouTube video player" width="560"></iframe></p>
 <p>題目三</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/KTy_SHYvMCw?si=uUMTcCEqStCf9Akr" title="YouTube video player" width="560"></iframe></p>
-<p>心得:<span>5種執行環境的操作方式都不難,但是都需要經過查詢資料才能找出問題,我個人是只會brython,SciTE 其他三項都不會 但來世需要自主學習才能找出問題給出答案</span></p>
+<p>心得:<span>5種執行環境的操作方式都不難,但是都需要經過查詢資料才能找出問題,我個人是只會brython,SciTE 其他三項都還需要再學習 目前還在透過與AI對話來找出問題給出答案</span></p>
 <h2>w11_hw</h2>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JDeCQABgqfo?si=AhGMbqCyZqN9za3m" title="YouTube video player" width="560"></iframe></p>
 <p>w11-1</p>
@@ -210,21 +210,59 @@ else:
 <h2>w12_hw</h2>
 <p>Brython</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/98b637956201665c987818775eec28e2/raw/a72d7fb8d2001439da6384725e35e0c59931a848/w12_hw">01_string</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print("字串")</pre>
+<p>使雙引號的內容為字串並印出內容</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def ask_question():</pre>
+<p>用來收集輸入的答案</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/36ec91f36cd30e2eaa8a60e9e050c89d/raw/0ba90aff3ee5b55f071320434eb299510bb75a6f/var">02_variables</a></p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/54e191c5c3902bae7f6fd2f6685218bf/raw/bfd2bc2317e608195d820121bd3465d7410bf761/list3">03_list</a></p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/9feed5b3d951e50b00427836457cee15/raw/6ccba628bfaddb0700b7ee15c1e115618ecf45a5/list4">04_list</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import window</pre>
+<p><span>導入物件</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">window.prompt(" ")</pre>
+<p><span>由使用者輸入問題答案存入各提的變數 再利用 print 印出答案</span></p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/54b527a1021e25244dc92d985bbf9962/raw/e229f07dac48d6d5c7853a66b8fad5075bb8f281/list5">05_list</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">todays_menu</pre>
+<p>儲存三個字串</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">todays_menu.index("salad")</pre>
+<p>查詢 todays_menu 中的字串</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">todays_menu.pop(side_dish_index)</pre>
+<p>移除 <code>"salad"</code></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">todays_menu.insert(side_dish_index, "fries")</pre>
+<p><code>"fries"</code> 代替 <code>"salad"</code></p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/c22d5ee6a4a2c5da5ed36a63677705e0/raw/b10ddbaa5c7dc8007f73d844a950f421fe0b98d7/list6">06_list</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">cities</pre>
+<p>儲存5個字串</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">cities[    ]</pre>
+<p>查詢字串並由 print 印出</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/d30a865e8ea081e22f1d9d5044e6ea7c/raw/a0b2c1e4cf4291cb9c888ba5cee3f490cca25f27/list7">07_list</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">senses[1]</pre>
+<p>更改 "senses" 的內容</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">planets</pre>
+<p>增加、減少、改變字串中的內容</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/28bace242e541d790838233177f2cf8e/raw/780e2947fe6e292a920a2fd9e3567274fd2a285f/list8">08_for</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for index in range(0, 4)</pre>
+<p>創建一個循環數字範圍（從 0 到 3）</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">friends[index]</pre>
+<p>印出對應索引的朋友名字</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print(dishes)</pre>
+<p><code><span face="Verdana, Arial, Helvetica, sans-serif" style="font-family: Verdana, Arial, Helvetica, sans-serif;">印出 </span>dishes</code> 中的所有菜餚名稱</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/b10e6000b5dc83fe05e66284d809c2e8/raw/6a88393db869f22d0f3b17e5920182d292896e2a/list9">09_for</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">range(0, len(animals))</pre>
+<p>生成索引</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">wanted_to_see = "penguin"</pre>
+<p>設定想要看到的動物並利用 for 迴圈檢查動物名稱</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/d783c702fcea18222be1e20dae6f26b8/raw/536f84a7af50306d7b7dca6a65480e8048abf95c/list10">10_for</a></p>
-<p>心得:在可攜檔案的 notebook 裡的筆記本程式01-10,是由 strings<span>、i</span>nput<span>、</span>for 來儲存或呼叫程式,再用print</p>
-<p>來印出雙引號內的文字、表情<span>、圖案</span></p>
-<h2>w13</h2>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">range(len(accessories))</pre>
+<p>生成索引</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">str(i)</pre>
+<p>將索引轉換成字串</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">i &lt;= position</pre>
+<p>判斷當前所引數字</p>
+<p>心得:在可攜檔案的 notebook 裡的筆記本程式01-10,是由 strings<span>、i</span>nput<span>、</span>for 等利用各種語法的功能來儲存/呼叫字串、循環檢查字串內容、更改字串,再用print來印出雙引號內的文字、表情<span>、圖案</span></p><h2>w13</h2>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/a1b57ce798dd440ea8a988cf3022c863/raw/280fbd40516362e82334685259e1f7d116f90f4e/w13">w13題目</a></p>
-<p>心得:再詢問 AI 的過程中需要由自己來引導他給出我們想要的答案,如果是直接把整個題目或原始程式傳給他,叫他直接給我們一個答案,有極大的概率不僅得不出答案,反而會有如for迴圈一般陷入無限問答的窘境</p>
-<h3>w13_ai</h3>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/s4KLD4TLssI?si=pbjR5v8lf2WxW5SE" title="YouTube video player" width="560"></iframe></p>
+<p>心得:再詢問 AI 的過程中我們需要由自己來引導 AI ,藉由握們問出的問題來讓他給出我們想要的答案,如果是直接把整個題目或原始程式傳給他,叫他直接給我們一個正確答案,有極大的概率不僅得不出答案,反而會陷入無限問a無限答b的窘境</p><h3>w13_ai</h3>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/64b40dcdaeb617096d11ce21759fefb0/raw/49e5bec59095c7af0adc5dfe7658360be3d5e232/w13-1-1">黑色畫筆畫外接圓</a></p>
 <h3>w13_hw</h3>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/c92ea7d4cb72a1b4e5e8516dbc33e96d/raw/049de571456baea745bb961bd578d056b3cb26e6/w13_hw">在各區塊上色</a></p>
@@ -232,11 +270,39 @@ else:
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/00fc2c528fb34f7754cd726d37c2d9b5/raw/47fb5db3551fd41f28fdae72e507fb4c0fe31415/w14_ex">三圓</a></p>
 <h2>w15</h2>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/d03e546c64dfa3d0689b654be21b12dc/raw/5a313b8676c15e41f4bfac93f562bad929236838/w15-1">從 1 累加到 100</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">sum(range(1, 101))</pre>
+<p>累加並生成數字1-100</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print()</pre>
+<p>印出結果</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/b5308b9278ad9b3af6faa1cc4f545633/raw/fc4ca3abc984300a5a08bc48bce62c9bc934b60c/w15">addto</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        total += i</pre>
+<p>定義累加的起始和結束值,並<span>利用 for 迴圈循環</span><span>起始和結束值,將每個 <code>i</code> 加到變數 total</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> return total</pre>
+<p>執行完畢進行累加</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/3a24a5ecc56ca3a7a4ac6b0680f4ce3d/raw/b994b115ca550afe9a019bfb36a41eae9c967bde/w15">add_only_even</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_only_even(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        if i % 2 == 0:  # 檢查是否為偶數
+            total += i
+</pre>
+<p>定義函式,<span>利用 for 迴圈循環所有整數,並檢查偶數</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">return total</pre>
+<p><span>執行完畢進行偶數累加</span></p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/afca2ee7db867c4ccf04f3e541094c9b/raw/405137a32ddd17ee1090a34b0897ea6cc794fcda/w15">add_avoid_8</a></p>
-<p>心得:這4個程式的題目皆是在將數字進行累加計算來得出結果,且在部分程式內會出現不計算任何含有某個數字的數字來進行累加,結果可以非常多變</p>
-<h1>HW 2</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        if '8' not in str(i):  # 檢查數字中是否包含 8
+            total += i
+</pre>
+<p><span>定義</span><span>函式,</span><span>利用 for 迴圈循環所有整數,並檢查數字</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> return total</pre>
+<p><span>執行完畢進行累加,不計算含有8的數字</span></p>
+<p>心得:這4個程式的題目皆是在將數字進行累加計算來得出結果,以從1-100的數字打底去做程世上的變化,能發現程式藉由 if 去改變整體架構</p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>

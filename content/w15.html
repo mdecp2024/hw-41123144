@@ -143,11 +143,39 @@ img.add_border {
         </header>
     <div id="tipue_search_content">w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/d03e546c64dfa3d0689b654be21b12dc/raw/5a313b8676c15e41f4bfac93f562bad929236838/w15-1">從 1 累加到 100</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">sum(range(1, 101))</pre>
+<p>累加並生成數字1-100</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print()</pre>
+<p>印出結果</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/b5308b9278ad9b3af6faa1cc4f545633/raw/fc4ca3abc984300a5a08bc48bce62c9bc934b60c/w15">addto</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        total += i</pre>
+<p>定義累加的起始和結束值,並<span>利用 for 迴圈循環</span><span>起始和結束值,將每個 <code>i</code> 加到變數 total</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> return total</pre>
+<p>執行完畢進行累加</p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/3a24a5ecc56ca3a7a4ac6b0680f4ce3d/raw/b994b115ca550afe9a019bfb36a41eae9c967bde/w15">add_only_even</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_only_even(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        if i % 2 == 0:  # 檢查是否為偶數
+            total += i
+</pre>
+<p>定義函式,<span>利用 for 迴圈循環所有整數,並檢查偶數</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">return total</pre>
+<p><span>執行完畢進行偶數累加</span></p>
 <p><a href="https://mdecp2024.github.io/hw-41123144/content/Brython.html?src=https://gist.githubusercontent.com/41123144/afca2ee7db867c4ccf04f3e541094c9b/raw/405137a32ddd17ee1090a34b0897ea6cc794fcda/w15">add_avoid_8</a></p>
-<p>心得:這4個程式的題目皆是在將數字進行累加計算來得出結果,且在部分程式內會出現不計算任何含有某個數字的數字來進行累加,結果可以非常多變</p>
-<br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        if '8' not in str(i):  # 檢查數字中是否包含 8
+            total += i
+</pre>
+<p><span>定義</span><span>函式,</span><span>利用 for 迴圈循環所有整數,並檢查數字</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> return total</pre>
+<p><span>執行完畢進行累加,不計算含有8的數字</span></p>
+<p>心得:這4個程式的題目皆是在將數字進行累加計算來得出結果,以從1-100的數字打底去做程世上的變化,能發現程式藉由 if 去改變整體架構</p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
